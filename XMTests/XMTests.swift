@@ -9,6 +9,9 @@ import XCTest
 @testable import XM
 
 final class XMTests: XCTestCase {
+    let surveys: [SurveyDataModel] = [.init(id: 1, question: "Question1", answer: "Answer1"),
+                                      .init(id: 1, question: "Question2", answer: "Answer2"),
+                                      .init(id: 1, question: "Question3", answer: "Answer3")]
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,12 +21,41 @@ final class XMTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    @MainActor func testInitialIndexValue() throws {
+        let viewModelFactory = ViewModelFactory()
+        let vm = viewModelFactory.surveyViewModel()
+        vm.surveys = surveys
+        XCTAssert(vm.index == 0)
+    }
+
+    @MainActor func testInitialQuestion() throws {
+        let viewModelFactory = ViewModelFactory()
+        let vm = viewModelFactory.surveyViewModel()
+        vm.surveys = surveys
+        XCTAssert(vm.currentQuestion == "Wait for the Question...")
+    }
+
+    @MainActor func testNextQuestion() {
+        let viewModelFactory = ViewModelFactory()
+        let vm = viewModelFactory.surveyViewModel()
+        vm.surveys = surveys
+        vm.nextQuestion()
+        XCTAssert(vm.currentQuestion == "Question2")
+    }
+
+    @MainActor func testInitialAnswer() {
+        let viewModelFactory = ViewModelFactory()
+        let vm = viewModelFactory.surveyViewModel()
+        vm.surveys = surveys
+        XCTAssert(vm.currentAnswer == "Type Your Answer here...")
+    }
+
+    @MainActor func testNextAnswer() {
+        let viewModelFactory = ViewModelFactory()
+        let vm = viewModelFactory.surveyViewModel()
+        vm.surveys = surveys
+        vm.nextQuestion()
+        XCTAssert(vm.currentAnswer == "Answer2")
     }
 
     func testPerformanceExample() throws {
@@ -32,5 +64,4 @@ final class XMTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

@@ -33,16 +33,3 @@ class SurveyService: SurveyServicing {
         return result == "" ? true : false
     }
 }
-
-class SurveyDataModel {
-
-    let id: Int
-    let question: String
-    var answer: String
-
-    internal init(id: Int, question: String, answer: String) {
-        self.id = id
-        self.question = question
-        self.answer = answer
-    }
-}

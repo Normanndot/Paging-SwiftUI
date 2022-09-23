@@ -24,6 +24,7 @@
 		81F482B428DD042F007A1486 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F482B328DD042F007A1486 /* URL+Extension.swift */; };
 		81F482B628DD044B007A1486 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F482B528DD044B007A1486 /* APIConstants.swift */; };
 		81F482B828DD0892007A1486 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F482B728DD0892007A1486 /* ViewModelFactory.swift */; };
+		81F482BF28DE40D5007A1486 /* SurveyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F482BE28DE40D5007A1486 /* SurveyDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		81F482B528DD044B007A1486 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		81F482B728DD0892007A1486 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		81F482B928DD0A98007A1486 /* ServiceHandler */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ServiceHandler; path = ../../KitmanLabs/ServiceHandler; sourceTree = "<group>"; };
+		81F482BE28DE40D5007A1486 /* SurveyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,17 +118,10 @@
 		81F4827928DB813D007A1486 /* XM */ = {
 			isa = PBXGroup;
 			children = (
-				81F4827A28DB813D007A1486 /* XMApp.swift */,
-				81F4827C28DB813D007A1486 /* ContentView.swift */,
-				81F482A728DCEE8A007A1486 /* SurveyView.swift */,
-				81F482A928DCF6AC007A1486 /* ReusableButton.swift */,
-				81F482B728DD0892007A1486 /* ViewModelFactory.swift */,
-				81F482AB28DD025D007A1486 /* SurveyViewModel.swift */,
-				81F482AD28DD0280007A1486 /* SurveyService.swift */,
-				81F482AF28DD0300007A1486 /* SurveyModel.swift */,
-				81F482B128DD03CF007A1486 /* Requests.swift */,
-				81F482B328DD042F007A1486 /* URL+Extension.swift */,
-				81F482B528DD044B007A1486 /* APIConstants.swift */,
+				81F482BD28DE407C007A1486 /* Network */,
+				81F482BB28DE402F007A1486 /* Model */,
+				81F482BC28DE4036007A1486 /* View */,
+				81F482BA28DE4026007A1486 /* ViewModel */,
 				81F4827E28DB813F007A1486 /* Assets.xcassets */,
 				81F4828028DB813F007A1486 /* Preview Content */,
 			);
@@ -156,6 +151,46 @@
 				81F4829728DB8140007A1486 /* XMUITestsLaunchTests.swift */,
 			);
 			path = XMUITests;
+			sourceTree = "<group>";
+		};
+		81F482BA28DE4026007A1486 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				81F482AB28DD025D007A1486 /* SurveyViewModel.swift */,
+				81F482B728DD0892007A1486 /* ViewModelFactory.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		81F482BB28DE402F007A1486 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81F482AF28DD0300007A1486 /* SurveyModel.swift */,
+				81F482BE28DE40D5007A1486 /* SurveyDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81F482BC28DE4036007A1486 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81F4827A28DB813D007A1486 /* XMApp.swift */,
+				81F4827C28DB813D007A1486 /* ContentView.swift */,
+				81F482A728DCEE8A007A1486 /* SurveyView.swift */,
+				81F482A928DCF6AC007A1486 /* ReusableButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		81F482BD28DE407C007A1486 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				81F482AD28DD0280007A1486 /* SurveyService.swift */,
+				81F482B128DD03CF007A1486 /* Requests.swift */,
+				81F482B328DD042F007A1486 /* URL+Extension.swift */,
+				81F482B528DD044B007A1486 /* APIConstants.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +334,7 @@
 				81F4827B28DB813D007A1486 /* XMApp.swift in Sources */,
 				81F482AA28DCF6AC007A1486 /* ReusableButton.swift in Sources */,
 				81F482B028DD0300007A1486 /* SurveyModel.swift in Sources */,
+				81F482BF28DE40D5007A1486 /* SurveyDataModel.swift in Sources */,
 				81F482B428DD042F007A1486 /* URL+Extension.swift in Sources */,
 				81F482B628DD044B007A1486 /* APIConstants.swift in Sources */,
 				81F482B828DD0892007A1486 /* ViewModelFactory.swift in Sources */,
